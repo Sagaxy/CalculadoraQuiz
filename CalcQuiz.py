@@ -1,30 +1,45 @@
+import os
 
+clear = lambda:os.system("cls")
 notas = []
 soma = 0
 media = 0
 
+print("\n\n#### CERTIFIQUE SE DE QUE ESCREVEU UMA DAS OPÇÕES ####\n")
+
+
 while True:
-    
-    entradaNota = float(input("\n\n<<--Digite o valor da Nota ou uma das opções-->>\n\n[99] encerrar programa \
-        \n\n[98] calcular\n\n[97] formatar media 0~2.0 pts(caso a entrada tenha sido de 0~10.0)\n\nSua resposta -->"))
-
-    if(entradaNota == 99):
-        break
+    try:
+        print("/==========================================\\")
+        print("| Digite o valor da nota OU uma das opções |")
+        print("\\==========================================/")
+        print(f"notas:{notas}")
         
-    elif(entradaNota == 98):
-        notas.sort(reverse = True)
-        numeroDeNotas = len(notas)*75//100
-        
-        for i in range(numeroDeNotas):
-            soma = soma + notas[i]
-            
-        media = soma/numeroDeNotas
-        print(f"A média do seu quiz é de: {media}")
-    
-    elif(entradaNota == 97):
-        mediaFormatada = (media*2)/10
-        print(mediaFormatada)
+        entradaNota = input("\n[E] encerrar programa\n\n[C] calcular\n\n[F] formatar media formato 2.0 pts\n\nSua resposta -->")
 
-    else:
-        notas.append(entradaNota)
+        if(entradaNota == "e" or entradaNota == "E"):
+            break
             
+        elif(entradaNota == "c" or entradaNota == "C"):
+            notas.sort(reverse = True)
+            numeroDeNotas = len(notas*75)//100
+            
+            for i in range(numeroDeNotas):
+                soma = soma + notas[i]
+                
+            media = soma/numeroDeNotas
+            clear()
+            print(f"\n\n#####A média do seu quiz é de: {media} ####\n\n")
+        
+        elif(entradaNota == "f" or entradaNota == "F"):
+            mediaFormatada = (media*0.2)
+            print(mediaFormatada)
+            break
+
+        else:
+            entradaNota = float(entradaNota)
+            notas.append(entradaNota)
+            clear()
+    except:
+        clear()
+        print("\n\n<<RESPOSTA INVÁLIDA, TU É BURRO?>>\n\n")
