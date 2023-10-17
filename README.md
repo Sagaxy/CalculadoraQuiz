@@ -8,5 +8,5 @@ calculadora pra rpzd ver a nota do quiz
 # Uso
 
 1. abre o cmd
-2. cd CalculadoraQuiz
+2. cd CalculadoraQuiz/
 3. python3 CalcQuiz.py
