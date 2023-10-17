@@ -3,8 +3,7 @@ calculadora pra rpzd ver a nota do quiz
 
 # Download
 1. abre o cmd
-2. roda isso aqui \n
-   git clone  https://github.com/Sagaxy/CalculadoraQuiz.git
+2. git clone  https://github.com/Sagaxy/CalculadoraQuiz.git
 
 # Uso
 
